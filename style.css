@@ -8,3 +8,38 @@ body {
 .custom-font {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+/* animate */
+@keyframes slideInFromLeft {
+    10% {
+        transform: translateX(-10%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    10% {
+        transform: translateX(10%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.animate-left {
+    animation: slideInFromLeft 0.8s ease forwards;
+}
+
+.animate-right {
+    animation: slideInFromRight 0.8s ease forwards;
+}
