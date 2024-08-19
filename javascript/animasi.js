@@ -9,14 +9,20 @@ function isElementInViewport(el) {
 }
 
 function handleScroll() {
-    var div1 = document.getElementById('div1');
-    var div2 = document.getElementById('div2');
-
-    if (isElementInViewport(div1)) {
-        div1.classList.add('animate-left');
-    }
-    if (isElementInViewport(div2)) {
-        div2.classList.add('animate-right');
+    for (var i = 1; i <= 24; i++) {
+        var div = document.getElementById('div' + i);
+        
+        if (div) { // Memastikan elemen ada
+            if (i % 2 === 0) { // Jika ID genap
+                if (isElementInViewport(div)) {
+                    div.classList.add('animate-left');
+                }
+            } else { // Jika ID ganjil
+                if (isElementInViewport(div)) {
+                    div.classList.add('animate-right');
+                }
+            }
+        }
     }
 }
 
